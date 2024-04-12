@@ -1,0 +1,17 @@
+[package]
+name = "arti-axum-hidden-service"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+jobserver = { version = "=0.1.20", default-features = false } # temporary fix for musl due to broken upstream version '0.1.29'
+anyhow = "1.0.82"
+tor-hsservice = "0.17.0"
+arti-client = { version = "0.17.0", features = ["onion-service-service"] }
+axum = "0.7.5"
+tokio = { version = "1.37.0", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1.40"
+tracing-subscriber = "0.3.18"
+arti-axum = { git = "https://github.com/rdbo/arti-axum", branch = "rdbo-update-deps" }
